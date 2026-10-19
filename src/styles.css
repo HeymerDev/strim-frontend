@@ -1,1 +1,122 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/figtree';
+
+/* Tokens de la dirección visual (diseño §9.3 a §9.5). Se quita la paleta por defecto de
+   Tailwind para que solo existan los colores del sistema. */
+@theme {
+  --color-*: initial;
+  --color-noche: #12101f;
+  --color-panel: #1a1830;
+  --color-relieve: #24213f;
+  --color-linea: #312d52;
+  --color-texto: #efedf9;
+  --color-texto-suave: #a7a4c4;
+  --color-texto-tenue: #8e8bb2;
+  --color-senal: #12c4e3;
+  --color-senal-fuerte: #4fd6ee;
+  --color-al-aire: #2410d0;
+  --color-teal: #0098b3;
+  --color-error: #ff7a8a;
+  --color-peligro: #d1343b;
+  --color-blanco: #ffffff;
+
+  /* Colores de nombres en el chat (D3): todos superan 4,5:1 sobre panel. */
+  --color-nombre-1: #4fd6ee;
+  --color-nombre-2: #a9a6ff;
+  --color-nombre-3: #6fe3c1;
+  --color-nombre-4: #ff9ec0;
+  --color-nombre-5: #ffc46b;
+
+  /* Colores del logo, solo para el símbolo. */
+  --color-logo-cian: #0ec2e1;
+  --color-logo-indigo: #1900b3;
+  --color-logo-onda: #0b45bd;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --font-sans: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, monospace;
+
+  /* Escala 1,25 sobre 16 px. */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-chat: 0.9375rem;
+  --text-chat--line-height: 1.375rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.9375rem;
+  --text-2xl--line-height: 2.375rem;
+  --text-3xl: 2.4375rem;
+  --text-3xl--line-height: 2.75rem;
+
+  --radius-campo: 12px;
+  --radius-panel: 20px;
+
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-noche);
+    color: var(--color-texto);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    caret-color: var(--color-senal);
+    scrollbar-color: var(--color-linea) transparent;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-senal) 35%, transparent);
+    color: var(--color-texto);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-senal);
+    outline-offset: 2px;
+  }
+
+  ::placeholder {
+    color: var(--color-texto-tenue);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

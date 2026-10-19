@@ -34,7 +34,7 @@
   - **Verificación:** `pnpm install`, `pnpm typecheck`, `pnpm lint` y `pnpm build` terminan sin errores, y `pnpm dev` abre una página vacía en `http://localhost:5173`.
   - _RNF-01, RNF-02 · Diseño §2, §13_
 
-- [ ] **2. Tokens, fuentes y logo**
+- [x] **2. Tokens, fuentes y logo** · contrato de dirección en `.impeccable/surfaces/src-router-tsx.md`
   - `src/styles.css`: Tailwind, las dos fuentes de `@fontsource-variable` y los tokens de color, tipografía, radios y espaciado en `@theme` (diseño §9.3 a §9.5).
   - Estilos globales: fondo `noche`, texto `texto`, anillo de foco en `:focus-visible` y la regla de `prefers-reduced-motion`.
   - `public/favicon.svg` y el componente `Logo`: el símbolo de los cuatro nodos en SVG y la palabra "strim" con Bricolage (D1).

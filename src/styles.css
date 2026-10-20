@@ -3,8 +3,9 @@
 @import '@fontsource-variable/figtree';
 
 /* Tokens de la dirección visual (diseño §9.3 a §9.5). Se quita la paleta por defecto de
-   Tailwind para que solo existan los colores del sistema. */
-@theme {
+   Tailwind para que solo existan los colores del sistema. `static` emite todas las variables,
+   también las que solo se leen desde estilos en línea (tonos de avatar y del chat). */
+@theme static {
   --color-*: initial;
   --color-noche: #12101f;
   --color-panel: #1a1830;
@@ -118,5 +119,99 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+@layer components {
+  /* Nodo "esperando señal" (diseño §9.6): tres anillos que se cierran hacia el centro en 2,4 s.
+     Es la única animación en bucle de la app. */
+  .nodo-entrante {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: senal-entrante 2.4s var(--ease-salida) infinite;
+    opacity: 0;
+  }
+  .nodo-entrante-1 {
+    animation-delay: -0.8s;
+  }
+  .nodo-entrante-2 {
+    animation-delay: -1.6s;
+  }
+
+  /* Con "reducir movimiento", los anillos quedan quietos y concéntricos. */
+  @media (prefers-reduced-motion: reduce) {
+    .nodo-entrante {
+      animation: none;
+      opacity: 1;
+    }
+    .nodo-entrante-1 {
+      transform: scale(0.66);
+    }
+    .nodo-entrante-2 {
+      transform: scale(0.33);
+    }
+  }
+
+  /* Modal (diseño §9.6): entra en 160 ms con opacidad y escala, sale en 120 ms. */
+  dialog.modal {
+    opacity: 0;
+    scale: 0.98;
+    transition:
+      opacity 120ms ease-in,
+      scale 120ms ease-in,
+      overlay 120ms allow-discrete,
+      display 120ms allow-discrete;
+  }
+  dialog.modal[open] {
+    opacity: 1;
+    scale: 1;
+    transition-duration: 160ms;
+    transition-timing-function: var(--ease-salida);
+  }
+  @starting-style {
+    dialog.modal[open] {
+      opacity: 0;
+      scale: 0.98;
+    }
+  }
+  dialog.modal::backdrop {
+    background-color: rgb(10 9 20 / 0);
+    transition:
+      background-color 160ms,
+      overlay 160ms allow-discrete,
+      display 160ms allow-discrete;
+  }
+  dialog.modal[open]::backdrop {
+    background-color: rgb(10 9 20 / 0.72);
+  }
+  @starting-style {
+    dialog.modal[open]::backdrop {
+      background-color: rgb(10 9 20 / 0);
+    }
+  }
+
+  .toast {
+    animation: aviso-entra 200ms var(--ease-salida);
+  }
+}
+
+@keyframes senal-entrante {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes aviso-entra {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
 }

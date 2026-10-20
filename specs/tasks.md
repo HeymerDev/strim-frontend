@@ -42,7 +42,7 @@
   - **Verificación:** el favicon se ve en la pestaña; el logo se ve nítido a 28 y 40 px; en DevTools, las fuentes cargan desde el propio servidor y no desde Google.
   - _RNF-07, RNF-08 · Diseño §9_
 
-- [ ] **3. Componentes base**
+- [x] **3. Componentes base** · `TextAreaField` aparte de `Field`; `lib/format.ts` empieza con `initials` y `toneOf`
   - `src/components/`: `Button`, `IconButton`, `Field`, `PasswordField`, `OtpInput`, `CopyField`, `Modal`, `Avatar`, `StatusNode`, `LiveBadge`, `Stat`, `Toaster`, `Spinner`, `Skeleton` y `EmptyState` (diseño §9.8).
   - Una página `/dev/ui`, solo en desarrollo, que muestra cada componente en todos sus estados.
   - **Verificación** en `/dev/ui`:

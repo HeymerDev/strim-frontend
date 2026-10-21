@@ -9,6 +9,7 @@
   --color-*: initial;
   --color-noche: #12101f;
   --color-panel: #1a1830;
+  --color-pantalla: #0b0a16;
   --color-relieve: #24213f;
   --color-linea: #312d52;
   --color-texto: #efedf9;
@@ -193,6 +194,11 @@
   .toast {
     animation: aviso-entra 200ms var(--ease-salida);
   }
+
+  /* Cambio de estado del video (diseño §9.6): desconectado ↔ en vivo en 200 ms. */
+  .fundido {
+    animation: fundido 200ms ease-out;
+  }
 }
 
 @keyframes senal-entrante {
@@ -205,6 +211,12 @@
   }
   100% {
     transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes fundido {
+  from {
     opacity: 0;
   }
 }

@@ -121,7 +121,7 @@
     - La página no salta mientras carga.
   - _RF-07 · Diseño §5.3, §10.2_
 
-- [ ] **10. Socket y página del canal**
+- [x] **10. Socket y página del canal** · socket probado contra el backend real (conexión, NOT_FOUND, token rechazado); la página con un canal simulado y los eventos disparados en el cliente; falta con un stream real (tarea 12)
   - `src/lib/socket.ts` (diseño §6.1) y `useChatRoom` (diseño §6.2), por ahora sin la interfaz del chat.
   - `ChannelPage`: datos del canal, estado "Desconectado", canal borrado, página no encontrada, "Ir al estudio" para el dueño y la distribución de escritorio y móvil (diseño §10.3). El marco 16:9 queda listo para el reproductor.
   - **Verificación:**

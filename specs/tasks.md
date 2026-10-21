@@ -90,7 +90,7 @@
     - Recargar `/verify` mantiene el correo; abrirla en otra pestaña nueva lleva a `/login`.
   - _RF-03, RF-04 · Diseño §5.4, §10.6_
 
-- [ ] **7. Iniciar y cerrar sesión**
+- [x] **7. Iniciar y cerrar sesión** · credenciales malas probadas contra el backend real; lo demás con respuestas simuladas; falta la prueba con tu cuenta (tú)
   - `LoginPage`, con el caso `EMAIL_NOT_VERIFIED` (pide código nuevo y lleva a `/verify`).
   - "Cerrar sesión" en `UserMenu`.
   - **Verificación:**

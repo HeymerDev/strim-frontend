@@ -1,21 +1,18 @@
-import { StrictMode, Suspense, lazy } from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider } from 'react-router';
 import './styles.css';
-import { Logo } from './components/Logo';
+import { queryClient } from './lib/queries';
+import { bootSession } from './lib/session';
+import { router } from './router';
 
-// Catálogo de componentes, solo en desarrollo: Vite quita esta rama del build.
-const DevUiPage = import.meta.env.DEV ? lazy(() => import('./pages/DevUiPage')) : null;
+void bootSession();
 
-// Página provisional hasta que exista el router (tarea 5).
-const page =
-  DevUiPage && location.pathname === '/dev/ui' ? (
-    <Suspense>
-      <DevUiPage />
-    </Suspense>
-  ) : (
-    <main className="grid min-h-dvh place-items-center">
-      <Logo size={40} />
-    </main>
-  );
-
-createRoot(document.getElementById('root')!).render(<StrictMode>{page}</StrictMode>);
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </StrictMode>,
+);

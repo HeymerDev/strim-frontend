@@ -64,7 +64,7 @@
     - Con el backend apagado, cualquier llamada lanza `NETWORK_ERROR`.
   - _RF-16.1, RF-16.2, RNF-02 · Diseño §5.2, §8_
 
-- [ ] **5. Sesión, rutas y barra superior**
+- [x] **5. Sesión, rutas y barra superior** · el usuario vive en el store de la sesión (no hay consulta `['me']`); "Cerrar sesión" ya está en el menú y se prueba en la tarea 7
   - `src/lib/session.ts`: store de la sesión, renovación programada y única, y sincronización entre pestañas (diseño §5.1). Conectar la renovación al cliente de la tarea 4.
   - `src/lib/queries.ts`: el `QueryClient` y los hooks de la sección 5.3 del diseño.
   - `src/router.tsx`: las rutas de la sección 4 del diseño, con `AppLayout`, `AuthLayout`, `RequireAuth`, `GuestOnly`, páginas diferidas y `safeNext`. Las páginas todavía vacías muestran solo su título.

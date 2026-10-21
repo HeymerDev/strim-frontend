@@ -15,7 +15,6 @@ import { Skeleton } from '../components/Skeleton';
 import { Spinner } from '../components/Spinner';
 import { Stat } from '../components/Stat';
 import { StatusNode } from '../components/StatusNode';
-import { Toaster } from '../components/Toaster';
 import { toast } from '../components/toast';
 
 /** Catálogo de componentes, solo en desarrollo (tarea 3). Los datos son de ejemplo. */
@@ -27,7 +26,7 @@ export default function DevUiPage() {
   const [bio, setBio] = useState('Streams de desarrollo web los martes y jueves.');
 
   return (
-    <main id="contenido" className="mx-auto flex max-w-5xl flex-col gap-14 px-4 py-10 sm:px-8">
+    <div className="mx-auto flex max-w-5xl flex-col gap-14 px-4 py-10 sm:px-8">
       <header className="flex flex-col gap-2">
         <Logo size={28} />
         <h1 className="text-2xl font-extrabold">Componentes base</h1>
@@ -230,8 +229,7 @@ export default function DevUiPage() {
         />
       </Section>
 
-      <Toaster />
-    </main>
+    </div>
   );
 }
 

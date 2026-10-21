@@ -112,7 +112,7 @@
 
 ## Fase 3 · Ver streams
 
-- [ ] **9. Inicio**
+- [x] **9. Inicio** · tarjetas probadas con canales simulados; falta verlo con un stream real (tareas 12 y 13). `staleTime` de 15 s para no repetir la petición en cada cambio de visibilidad
   - `HomePage` con las tarjetas, la carga con `Skeleton`, el estado vacío y el error con "Reintentar" (diseño §10.2).
   - **Verificación:**
     - Sin nadie en vivo se ve el estado vacío, y "Transmite tú" lleva a `/dashboard`.

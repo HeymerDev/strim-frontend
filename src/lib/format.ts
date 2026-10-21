@@ -21,6 +21,7 @@ export function formatElapsed(since: string, now = Date.now()): string {
 /** Tiempo en vivo para lectores de pantalla: "En vivo desde hace 1 hora y 2 minutos". */
 export function elapsedLabel(since: string, now = Date.now()): string {
   const total = elapsedSeconds(since, now);
+  if (total < 60) return 'En vivo desde hace menos de un minuto';
   const h = Math.floor(total / 3600);
   const m = Math.floor((total % 3600) / 60);
   const parts = [];

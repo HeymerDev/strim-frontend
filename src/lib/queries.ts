@@ -25,6 +25,8 @@ export function useLiveChannels() {
   return useQuery({
     queryKey: queryKeys.liveChannels,
     queryFn: getLiveChannels,
+    // Al volver a la pestaña solo se pide de nuevo si pasaron más de 15 s.
+    staleTime: 15_000,
     refetchInterval: 30_000,
     refetchOnWindowFocus: true,
   });

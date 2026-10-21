@@ -68,7 +68,7 @@ function ChannelView({ username }: { username: string }) {
           </div>
         )}
       </div>
-      <ChatPanel room={room} className="min-h-0 flex-1 border-t border-linea lg:border-t-0 lg:border-l" />
+      <ChatPanel room={room} username={username} signedIn={Boolean(session)} className="min-h-0 flex-1 border-t border-linea lg:border-t-0 lg:border-l" />
     </div>
   );
 }

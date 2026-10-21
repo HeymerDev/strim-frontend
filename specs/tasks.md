@@ -132,7 +132,7 @@
     - `/noexiste` muestra "Este canal no existe".
   - _RF-08, RF-10.1, RF-10.8 · Diseño §6, §10.3_
 
-- [ ] **11. Chat**
+- [x] **11. Chat** · probado con un canal simulado y el socket interceptado; falta con dos navegadores y el backend real (tú, tarea 17)
   - `ChatPanel`, `ChatMessage` y `ChatComposer` (diseño §6.3 y §10.3).
   - **Verificación:**
     - Al entrar se ven los últimos mensajes; uno nuevo aparece en las dos pestañas abiertas al mismo tiempo.

@@ -195,6 +195,11 @@
     animation: aviso-entra 200ms var(--ease-salida);
   }
 
+  /* "Mensajes nuevos" sube 8 px al aparecer (diseño §9.6). */
+  .mensajes-nuevos {
+    animation: aviso-entra 160ms var(--ease-salida);
+  }
+
   /* Cambio de estado del video (diseño §9.6): desconectado ↔ en vivo en 200 ms. */
   .fundido {
     animation: fundido 200ms ease-out;

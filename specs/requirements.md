@@ -1,7 +1,7 @@
 # Strim · Frontend — Requerimientos
 
 > **SDD fase 1 de 3** (Requerimientos → Diseño → Tareas)
-> Estado: **aprobado (v1)**, con las propuestas D1 a D5 · Fecha: 2026-10-18
+> Estado: **aprobado (v1.1)**, con las propuestas D1 a D5 · Fecha: 2026-10-18 · v1.1: el código tiene el largo que configura Supabase (RF-04 y RF-06)
 
 Los criterios usan el formato EARS: **CUANDO** (evento), **SI … ENTONCES** (caso no deseado), **MIENTRAS** (estado), y "la app **DEBERÁ**". Cada criterio tiene un ID (`RF-03.2`) para enlazarlo luego con el diseño y las tareas. Cuando un criterio usa la API, se cita el requerimiento del backend como `back RF-xx` ([backend/specs/requirements.md](../../backend/specs/requirements.md)).
 
@@ -126,8 +126,8 @@ Las rutas fijas usan palabras que el backend ya reserva como username (D1), así
 
 **Historia:** Como usuario recién registrado, quiero escribir el código que me llegó para activar mi cuenta.
 
-1. La pantalla DEBERÁ mostrar a qué correo se envió el código y un campo para los 6 dígitos que acepte pegar el código completo y use el teclado numérico en móvil.
-2. CUANDO se completan los 6 dígitos, la app DEBERÁ enviarlos con `POST /api/auth/verify-email`. Si son correctos, se inicia la sesión y se lleva a `next` o a `/` (back RF-02.1).
+1. La pantalla DEBERÁ mostrar a qué correo se envió el código y un campo para los dígitos del código (el largo que configura Supabase, 8 en este proyecto) que acepte pegar el código completo y use el teclado numérico en móvil.
+2. CUANDO se completan los dígitos, la app DEBERÁ enviarlos con `POST /api/auth/verify-email`. Si son correctos, se inicia la sesión y se lleva a `next` o a `/` (back RF-02.1).
 3. SI la respuesta es `INVALID_OTP`, ENTONCES la app DEBERÁ mostrar el error y vaciar el campo para escribir de nuevo.
 4. La pantalla DEBERÁ ofrecer "Reenviar código", deshabilitado durante 60 s después de cada envío y con la cuenta regresiva visible (back RF-02.3 y RF-02.4).
 5. SI se abre `/verify` sin un correo conocido, ENTONCES la app DEBERÁ llevar a `/login`.
@@ -144,7 +144,7 @@ Las rutas fijas usan palabras que el backend ya reserva como username (D1), así
 **Historia:** Como usuario que olvidó su contraseña, quiero restablecerla con un código que llega a mi correo.
 
 1. **Paso 1:** CUANDO el usuario envía su correo, la app DEBERÁ llamar a `POST /api/auth/password/forgot` y mostrar siempre el mismo mensaje: si existe una cuenta con ese correo, se envió un código (back RF-05.1).
-2. **Paso 2:** la app DEBERÁ pedir el código de 6 dígitos y la contraseña nueva (con las reglas de RF-03.2) y enviarlos con `POST /api/auth/password/reset`.
+2. **Paso 2:** la app DEBERÁ pedir el código y la contraseña nueva (con las reglas de RF-03.2) y enviarlos con `POST /api/auth/password/reset`.
 3. SI la respuesta es `INVALID_OTP`, ENTONCES la app DEBERÁ mostrar el error en el campo del código.
 4. CUANDO el cambio funciona, la app DEBERÁ llevar a `/login` con el correo ya escrito y el aviso "Contraseña actualizada. Inicia sesión" (back RF-05.4).
 5. El paso 2 DEBERÁ ofrecer "Reenviar código" con la misma espera de 60 s de RF-04.4.

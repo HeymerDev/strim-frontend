@@ -15,7 +15,7 @@ import { ApiError, forgotPassword, resetPassword } from '../lib/api';
 import { applyApiError } from '../lib/formErrors';
 import { usePageTitle } from '../lib/navigation';
 import { formatCountdown, useCooldown } from '../lib/useCooldown';
-import { emailSchema, passwordSchema } from '../lib/validation';
+import { emailSchema, OTP_INCOMPLETE, OTP_LENGTH, passwordSchema } from '../lib/validation';
 
 const SENT_NOTICE = 'Si existe una cuenta con ese correo, te enviamos un código.';
 
@@ -146,8 +146,8 @@ function CodeStep({
         className="mt-6 flex flex-col gap-5"
         onSubmit={handleSubmit(({ newPassword }) => {
           setFormError(null);
-          if (otp.length !== 6) {
-            setOtpError('Escribe los 6 dígitos del código.');
+          if (otp.length !== OTP_LENGTH) {
+            setOtpError(OTP_INCOMPLETE);
             return;
           }
           reset.mutate({ email, otp, newPassword });

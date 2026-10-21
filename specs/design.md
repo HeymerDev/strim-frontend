@@ -222,7 +222,7 @@ Esquemas zod con las mismas reglas del backend, usados por react-hook-form:
 | `email` | Formato de correo. |
 | `username` | `^[a-z0-9_]{3,20}$`. El campo convierte a minúsculas al escribir. |
 | `password` | De 8 a 72 caracteres, con al menos una letra y un número. |
-| `otp` | Exactamente 6 dígitos. |
+| `otp` | Exactamente `OTP_LENGTH` dígitos (`VITE_OTP_LENGTH`, de 6 a 10; por defecto 8). |
 | `displayName` | De 1 a 30 caracteres, sin espacios en los extremos. |
 | `bio` | De 0 a 200 caracteres. |
 | `title` | De 0 a 100 caracteres. |
@@ -351,7 +351,7 @@ El cuarto nodo del logo (el de anillos concéntricos) es la señal saliendo. Ese
 | `IconButton` | Botón de 44 × 44 con `aria-label` obligatorio en el tipo. |
 | `Field` | Etiqueta visible arriba, campo, ayuda y error debajo, enlazados con `aria-describedby`. El error lleva ícono y texto, no solo color. |
 | `PasswordField` | `Field` con botón "Mostrar contraseña" / "Ocultar contraseña" (`aria-pressed`). Con `rules` muestra la lista de reglas que se marcan mientras se escribe (RF-03.2). |
-| `OtpInput` | Un solo `<input>` con `inputmode="numeric"`, `autocomplete="one-time-code"` y `maxlength="6"`, dibujado como 6 casillas. Así funcionan pegar, el autocompletado del sistema y los lectores de pantalla (RF-04.1). |
+| `OtpInput` | Un solo `<input>` con `inputmode="numeric"`, `autocomplete="one-time-code"` y `maxlength` igual a `OTP_LENGTH`, dibujado como una casilla por dígito. Así funcionan pegar, el autocompletado del sistema y los lectores de pantalla (RF-04.1). |
 | `CopyField` | Valor en monoespaciada, solo lectura, con botón "Copiar" que cambia a "Copiado" 2 s y lo anuncia con `aria-live`. Con `secret`, se ve como `••••` y suma "Mostrar" (RF-12.6). |
 | `Modal` | `<dialog>` con título, descripción, contenido y acciones. Cierra con Escape y con "Cancelar". |
 | `Avatar` | Imagen redonda o iniciales sobre un tono del hash del username. Tamaños 24, 32, 40, 64, 96 y 120. Prop `live` para el anillo. |
@@ -586,7 +586,7 @@ Escritorio
 - Columna de 400 px centrada en la pantalla, sobre `noche`, con el formulario en un `panel` de radio 20 px.
 - Las "pestañas" son dos enlaces (`/login` y `/register`) con `aria-current="page"` en el activo. Solo aparecen en esas dos páginas.
 - **Crear cuenta:** correo, username (ayuda "Será tu canal: strim/<username>") y contraseña con reglas. Botón "Crear cuenta".
-- **Verificar:** título "Revisa tu correo", texto "Enviamos un código de 6 dígitos a **ana@correo.com**.", `OtpInput`, "Reenviar código" (con "Reenviar en 0:42" mientras espera) y el enlace "Usar otro correo", que vuelve a `/register`.
+- **Verificar:** título "Revisa tu correo", texto "Enviamos un código de 8 dígitos a **ana@correo.com**." (el número sale de `VITE_OTP_LENGTH`), `OtpInput`, "Reenviar código" (con "Reenviar en 0:42" mientras espera) y el enlace "Usar otro correo", que vuelve a `/register`.
 - **Recuperar:** paso 1 "Recupera tu contraseña" con el correo y "Enviar código". Paso 2 con el aviso del envío, `OtpInput`, "Contraseña nueva" y "Cambiar contraseña". El paso vive en el estado de la página.
 - `autocomplete`: `email`, `username`, `current-password` y `new-password` donde corresponde, para que funcionen los gestores de contraseñas.
 
@@ -632,6 +632,7 @@ Los demás errores usan el `message` del backend (sección 9 del diseño del bac
 | Variable | Ejemplo | Uso |
 |---|---|---|
 | `VITE_API_URL` | `http://localhost:4000` | REST (`/api`) y Socket.IO. |
+| `VITE_OTP_LENGTH` | `8` | Dígitos del código de Supabase ("Email OTP Length", de 6 a 10). El backend acepta cualquiera de esos largos. |
 
 La URL del video viene en `playbackUrl` desde el backend, así que el frontend no necesita la de MediaMTX.
 

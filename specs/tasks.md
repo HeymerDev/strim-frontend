@@ -47,7 +47,7 @@
   - Una página `/dev/ui`, solo en desarrollo, que muestra cada componente en todos sus estados.
   - **Verificación** en `/dev/ui`:
     - Cada botón se ve en reposo, hover, foco, cargando y deshabilitado.
-    - `OtpInput` acepta pegar `123456` y en el celular abre el teclado numérico.
+    - `OtpInput` acepta pegar el código completo y en el celular abre el teclado numérico.
     - `CopyField` copia al portapapeles y dice "Copiado"; el secreto se oculta y se muestra.
     - `Modal` cierra con Escape y devuelve el foco al botón que lo abrió.
     - `StatusNode` muestra los tres estados, y con "reducir movimiento" activado en el sistema los anillos quedan quietos.

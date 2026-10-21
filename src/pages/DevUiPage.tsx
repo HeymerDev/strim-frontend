@@ -100,12 +100,12 @@ export default function DevUiPage() {
               setOtpError(undefined);
             }}
             onComplete={(v) => {
-              if (v !== '123456') setOtpError('El código es incorrecto o venció.');
+              if (v !== '1234567890'.slice(0, v.length)) setOtpError('El código es incorrecto o venció.');
               else toast('Código correcto');
             }}
             error={otpError}
           />
-          <p className="text-sm text-texto-suave">Prueba pegando 123456 (correcto) u otro número (error).</p>
+          <p className="text-sm text-texto-suave">Prueba con 1234… (correcto) u otro número (error).</p>
         </div>
       </Section>
 

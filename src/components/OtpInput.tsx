@@ -1,12 +1,13 @@
 import { useId, useState } from 'react';
 import { CircleAlert } from 'lucide-react';
 import { cx } from './cx';
+import { OTP_LENGTH } from '../lib/validation';
 
 type OtpInputProps = {
   label?: string;
   value: string;
   onChange: (value: string) => void;
-  /** Se llama al completar los 6 dígitos (RF-04.2). */
+  /** Se llama al completar todos los dígitos (RF-04.2). */
   onComplete?: (value: string) => void;
   error?: string;
   disabled?: boolean;
@@ -14,10 +15,10 @@ type OtpInputProps = {
   name?: string;
 };
 
-const LENGTH = 6;
+const LENGTH = OTP_LENGTH;
 
 /**
- * Un solo <input> dibujado como 6 casillas (diseño §9.8): así funcionan pegar el código,
+ * Un solo <input> dibujado como una casilla por dígito (diseño §9.8): así funcionan pegar el código,
  * el autocompletado del sistema y los lectores de pantalla.
  */
 export function OtpInput({ label = 'Código', value, onChange, onComplete, error, disabled, autoFocus, name }: OtpInputProps) {
@@ -32,12 +33,17 @@ export function OtpInput({ label = 'Código', value, onChange, onComplete, error
         {label}
       </label>
       <div className="relative">
-        <div aria-hidden="true" className="grid grid-cols-6 gap-2">
+        <div
+          aria-hidden="true"
+          className={cx('grid', LENGTH > 6 ? 'gap-1.5' : 'gap-2')}
+          style={{ gridTemplateColumns: `repeat(${LENGTH}, minmax(0, 1fr))` }}
+        >
           {Array.from({ length: LENGTH }, (_, i) => (
             <div
               key={i}
               className={cx(
-                'flex aspect-[5/6] max-h-16 items-center justify-center rounded-campo border bg-relieve font-display text-2xl font-bold tabular-nums transition-[border-color] duration-150',
+                'flex aspect-[5/6] max-h-16 items-center justify-center rounded-campo border bg-relieve font-display font-bold tabular-nums transition-[border-color] duration-150',
+                LENGTH > 6 ? 'text-xl' : 'text-2xl',
                 error ? 'border-error' : 'border-linea',
                 focused && i === active && 'border-senal outline-2 outline-offset-1 outline-senal/50',
                 disabled && 'opacity-60',
@@ -55,7 +61,7 @@ export function OtpInput({ label = 'Código', value, onChange, onComplete, error
           autoFocus={autoFocus}
           inputMode="numeric"
           autoComplete="one-time-code"
-          pattern="\d{6}"
+          pattern={`\\d{${LENGTH}}`}
           maxLength={LENGTH}
           aria-invalid={error ? true : undefined}
           aria-describedby={errorId}

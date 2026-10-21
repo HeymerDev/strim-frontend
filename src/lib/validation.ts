@@ -53,7 +53,20 @@ export const passwordSchema = z
 /** Para una contraseña existente (login, actual, borrar la cuenta): solo que no esté vacía. */
 export const currentPasswordSchema = z.string().min(1, 'Escribe tu contraseña.').max(72);
 
-export const otpSchema = z.string().regex(/^\d{6}$/, 'Escribe los 6 dígitos del código.');
+/**
+ * Largo del código que manda Supabase ("Email OTP Length", de 6 a 10). El backend acepta cualquiera de
+ * esos largos; el frontend necesita saber cuál es para dibujar las casillas y enviar al completarlas.
+ */
+export const OTP_LENGTH = parseOtpLength(import.meta.env.VITE_OTP_LENGTH);
+
+function parseOtpLength(value: string | undefined): number {
+  const n = Number(value);
+  return Number.isInteger(n) && n >= 6 && n <= 10 ? n : 8;
+}
+
+export const OTP_INCOMPLETE = `Escribe los ${OTP_LENGTH} dígitos del código.`;
+
+export const otpSchema = z.string().regex(new RegExp(`^\\d{${OTP_LENGTH}}$`), OTP_INCOMPLETE);
 
 export const displayNameSchema = z
   .string()

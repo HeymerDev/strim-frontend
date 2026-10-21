@@ -10,10 +10,11 @@ import { safeNext, usePageTitle } from '../lib/navigation';
 import { clearPendingEmail, getPendingEmail } from '../lib/pendingEmail';
 import { startSession } from '../lib/session';
 import { formatCountdown, useCooldown } from '../lib/useCooldown';
+import { OTP_INCOMPLETE, OTP_LENGTH } from '../lib/validation';
 
 type VerifyState = { email?: string; notice?: string } | null;
 
-/** Verificar el correo con el código de 6 dígitos (RF-04, diseño §10.6). */
+/** Verificar el correo con el código que llega por correo (RF-04, diseño §10.6). */
 export default function VerifyPage() {
   usePageTitle('Revisa tu correo');
   const location = useLocation();
@@ -72,7 +73,7 @@ export default function VerifyPage() {
       <h1 className="text-2xl font-extrabold">Revisa tu correo</h1>
       <p className="mt-3 text-base text-texto-suave">
         {state?.notice && <span className="mb-2 block text-texto">{state.notice}</span>}
-        Enviamos un código de 6 dígitos a <strong className="font-semibold break-all text-texto">{email}</strong>.
+        Enviamos un código de {OTP_LENGTH} dígitos a <strong className="font-semibold break-all text-texto">{email}</strong>.
       </p>
 
       <form
@@ -80,8 +81,8 @@ export default function VerifyPage() {
         className="mt-6 flex flex-col gap-5"
         onSubmit={(event) => {
           event.preventDefault();
-          if (otp.length === 6) submit(otp);
-          else setOtpError('Escribe los 6 dígitos del código.');
+          if (otp.length === OTP_LENGTH) submit(otp);
+          else setOtpError(OTP_INCOMPLETE);
         }}
       >
         <OtpInput

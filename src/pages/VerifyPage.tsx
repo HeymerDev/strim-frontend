@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router';
 import { Button } from '../components/Button';
@@ -7,10 +7,9 @@ import { OtpInput } from '../components/OtpInput';
 import { toast } from '../components/toast';
 import { ApiError, resendOtp, verifyEmail } from '../lib/api';
 import { safeNext, usePageTitle } from '../lib/navigation';
-import { clearPendingEmail, codeSentAt, getPendingEmail, markCodeSent } from '../lib/pendingEmail';
+import { clearPendingEmail, getPendingEmail } from '../lib/pendingEmail';
 import { startSession } from '../lib/session';
-
-const COOLDOWN_S = 60;
+import { formatCountdown, useCooldown } from '../lib/useCooldown';
 
 type VerifyState = { email?: string; notice?: string } | null;
 
@@ -48,14 +47,12 @@ export default function VerifyPage() {
   const resend = useMutation({
     mutationFn: () => resendOtp(email!),
     onSuccess: () => {
-      markCodeSent();
       remaining.restart();
       toast('Te enviamos un código nuevo.');
     },
     onError: (error) => {
       if (error instanceof ApiError && error.code === 'TOO_MANY_REQUESTS') {
-        markCodeSent();
-        remaining.restart();
+          remaining.restart();
       }
       setFormError(error instanceof ApiError ? error.message : 'Algo salió mal.');
     },
@@ -132,36 +129,4 @@ export default function VerifyPage() {
       </div>
     </div>
   );
-}
-
-/** Segundos que faltan para poder reenviar el código (RF-04.4). */
-function useCooldown() {
-  const left = () => {
-    const sent = codeSentAt();
-    return sent ? Math.max(0, COOLDOWN_S - Math.floor((Date.now() - sent) / 1000)) : 0;
-  };
-  const [seconds, setSeconds] = useState(left);
-  const [round, setRound] = useState(0);
-
-  useEffect(() => {
-    if (left() === 0) return;
-    const timer = window.setInterval(() => {
-      const value = left();
-      setSeconds(value);
-      if (value === 0) window.clearInterval(timer);
-    }, 1000);
-    return () => window.clearInterval(timer);
-  }, [round]);
-
-  return {
-    seconds,
-    restart: () => {
-      setSeconds(left());
-      setRound((r) => r + 1);
-    },
-  };
-}
-
-function formatCountdown(seconds: number) {
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
 }

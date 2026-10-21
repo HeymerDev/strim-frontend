@@ -54,7 +54,7 @@
     - Todo se puede usar solo con el teclado.
   - _RNF-04, RNF-05 · Diseño §9.5 a §9.8, §12_
 
-- [ ] **4. Tipos, cliente de API y validación**
+- [x] **4. Tipos, cliente de API y validación** · la renovación del token queda como `setAuthBridge`, que conecta la tarea 5
   - `src/lib/types.ts`: los tipos de la API y de los eventos del socket, copiados del backend.
   - `src/lib/api.ts`: `ApiError`, la petición con token y la función de cada ruta (diseño §5.2). La renovación del token se conecta en la tarea 5.
   - `src/lib/validation.ts` (diseño §8) y `src/lib/format.ts` (tiempo en vivo, espectadores, hora e iniciales).

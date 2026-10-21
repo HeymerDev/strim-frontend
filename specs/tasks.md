@@ -78,7 +78,7 @@
 
 ## Fase 2 · Cuentas
 
-- [ ] **6. Crear cuenta y verificar el correo**
+- [x] **6. Crear cuenta y verificar el correo** · probado con respuestas simuladas del backend; falta la prueba con un correo real (tú)
   - `RegisterPage` y `VerifyPage` (diseño §10.6), con los errores de la API en sus campos (diseño §5.4).
   - Cuenta regresiva de 60 s para "Reenviar código" y el correo pendiente en `sessionStorage`.
   - **Verificación:**

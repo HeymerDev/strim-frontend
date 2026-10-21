@@ -102,7 +102,7 @@
     - Cambiar también el `refreshToken` por uno inválido: la app borra la sesión y `/dashboard` lleva a `/login`.
   - _RF-02, RF-05 · Diseño §5.1, §5.2_
 
-- [ ] **8. Recuperar la contraseña**
+- [x] **8. Recuperar la contraseña** · paso 1 contra el backend real; paso 2 con respuestas simuladas; falta la prueba con tu cuenta (tú). La cuenta regresiva quedó en `lib/useCooldown.ts`
   - `ResetPage` con sus dos pasos (diseño §10.6).
   - **Verificación:**
     - El paso 1 muestra el mismo mensaje con un correo que existe y con uno que no.

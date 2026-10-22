@@ -169,7 +169,7 @@
 
 ## Fase 5 · Ajustes
 
-- [ ] **14. Perfil y avatar**
+- [x] **14. Perfil y avatar** · probado con sesión y backend simulados; falta subir una foto real a tu cuenta (tú)
   - `SettingsPage` con el panel de perfil y la subida del avatar (diseño §10.5).
   - **Verificación:**
     - "Guardar cambios" solo se habilita con cambios, y al guardar la barra muestra el nombre y el avatar nuevos.

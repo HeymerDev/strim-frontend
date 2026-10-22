@@ -144,7 +144,7 @@
     - Los mensajes del dueño llevan la insignia "Streamer".
   - _RF-10, RF-11 · Diseño §6.2, §6.3, §10.3_
 
-- [ ] **12. Reproductor**
+- [x] **12. Reproductor** · probado con un HLS público de prueba (autoplay en silencio, controles, atajos, preferencias, reintentos y desmontaje); falta con OBS y tu canal (tú). hls.js va en su propio archivo de 592 kB que solo baja en el canal
   - `LivePlayer` con hls.js diferido, HLS nativo como respaldo, autoplay en silencio, "Activar sonido", controles, atajos, preferencias y reintentos (diseño §7).
   - **Verificación:**
     - Con OBS transmitiendo, el video arranca solo y en silencio; "Activar sonido" lo activa.
@@ -156,7 +156,7 @@
 
 ## Fase 4 · Transmitir
 
-- [ ] **13. Estudio**
+- [x] **13. Estudio** · probado con sesión y backend simulados (tres estados, título, iniciar, finalizar con confirmación, regenerar, vista previa y barra en vivo); falta con OBS y tu cuenta (tú)
   - `DashboardPage`: panel de estado con sus tres estados, título, iniciar y finalizar, credenciales de OBS, regenerar la clave, guía, vista previa y "Ver mi canal" (diseño §10.4).
   - `stream:state` actualiza el estudio y el botón "Transmitir" de la barra.
   - **Verificación:**

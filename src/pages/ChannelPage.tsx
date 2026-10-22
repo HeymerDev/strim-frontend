@@ -1,9 +1,10 @@
+import { lazy, Suspense } from 'react';
 import { useParams } from 'react-router';
 import { Button } from '../components/Button';
 import { EmptyState } from '../components/EmptyState';
 import { Skeleton } from '../components/Skeleton';
 import { ChannelInfo } from '../features/channel/ChannelInfo';
-import { VideoFrame } from '../features/channel/VideoFrame';
+import { Connecting, VideoFrame } from '../features/channel/VideoFrame';
 import { ChatPanel } from '../features/chat/ChatPanel';
 import { useChatRoom } from '../features/chat/useChatRoom';
 import { ApiError } from '../lib/api';
@@ -11,6 +12,9 @@ import { usePageTitle } from '../lib/navigation';
 import { useChannel } from '../lib/queries';
 import { useSession } from '../lib/session';
 import NotFoundPage from './NotFoundPage';
+
+// El reproductor y hls.js se descargan solo cuando hay video (RNF-08).
+const LivePlayer = lazy(() => import('../features/player/LivePlayer'));
 
 /** Canal (RF-08). Se monta de nuevo al cambiar de canal: cada uno tiene su sala y su estado. */
 export default function ChannelPage() {
@@ -54,7 +58,19 @@ function ChannelView({ username }: { username: string }) {
     <div className={`flex ${FULL_HEIGHT} flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_360px]`}>
       <div className="shrink-0 lg:min-h-0 lg:overflow-y-auto">
         <div className="lg:p-6">
-          {channel ? <VideoFrame channel={channel} deleted={room.status === 'deleted'} /> : <Skeleton className="aspect-video w-full rounded-none lg:rounded-panel" />}
+          {channel ? (
+            <VideoFrame
+              channel={channel}
+              deleted={room.status === 'deleted'}
+              player={
+                channel.playbackUrl && (
+                  <Suspense fallback={<Connecting />}>
+                    <LivePlayer src={channel.playbackUrl} label={`Stream de ${channel.displayName}`} />
+                  </Suspense>
+                )
+              }
+            />
+          ) : <Skeleton className="aspect-video w-full rounded-none lg:rounded-panel" />}
         </div>
         {channel ? (
           <ChannelInfo channel={channel} isOwner={isOwner} />

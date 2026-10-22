@@ -52,7 +52,7 @@ export function CopyField({ label, value, secret = false }: CopyFieldProps) {
       <div className="flex flex-wrap items-center gap-2 rounded-campo border border-linea bg-relieve p-1.5 pl-4">
         <code
           aria-labelledby={id}
-          className="min-w-0 flex-1 py-1.5 font-mono text-sm break-all text-texto"
+          className="min-w-48 flex-1 py-1.5 font-mono text-sm break-all text-texto"
           translate="no"
         >
           {visible ? value : <span aria-label="Valor oculto">{MASK}</span>}

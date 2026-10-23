@@ -66,7 +66,18 @@ export function ChatPanel({ room, username, signedIn, className }: ChatPanelProp
       </header>
 
       <div className="relative min-h-0 flex-1">
-        <div ref={list} onScroll={onScroll} className="absolute inset-0 overflow-y-auto overscroll-contain py-2">
+        {/* La zona con scroll es el registro del chat: se anuncia sin interrumpir y se puede enfocar para
+            desplazarla con el teclado (RNF-05). */}
+        <div
+          ref={list}
+          onScroll={onScroll}
+          role="log"
+          aria-live="polite"
+          aria-relevant="additions"
+          aria-label="Mensajes del chat"
+          tabIndex={0}
+          className="absolute inset-0 overflow-y-auto overscroll-contain py-2 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-senal"
+        >
           {deleted ? (
             <p className="px-4 py-2 text-sm text-texto-suave">Este canal ya no existe.</p>
           ) : status === 'joining' && messages.length === 0 ? (
@@ -78,7 +89,7 @@ export function ChatPanel({ room, username, signedIn, className }: ChatPanelProp
               {signedIn ? 'Todavía no hay mensajes. Escribe el primero.' : 'Todavía no hay mensajes.'}
             </p>
           ) : (
-            <ul role="log" aria-live="polite" aria-relevant="additions" aria-label="Mensajes del chat" className="flex min-h-full flex-col justify-end">
+            <ul className="flex min-h-full flex-col justify-end">
               {messages.map((message) => (
                 <ChatMessageItem key={message.id} message={message} isStreamer={message.author.username === username} />
               ))}

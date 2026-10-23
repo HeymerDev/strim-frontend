@@ -60,12 +60,12 @@ export default function RegisterPage() {
       >
         <Field label="Correo" type="email" autoComplete="email" inputMode="email" error={errors.email?.message} {...emailField} />
         <Field
-          label="Username"
+          label="Nombre de usuario"
           autoComplete="username"
           autoCapitalize="none"
           spellCheck={false}
           maxLength={20}
-          hint={`Será tu canal: strim/${username || 'username'}`}
+          hint={`Será tu canal: strim/${username || 'tu-usuario'}`}
           error={errors.username?.message}
           {...usernameField}
           onChange={(event) => {

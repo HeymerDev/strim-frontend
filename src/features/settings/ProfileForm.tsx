@@ -60,13 +60,13 @@ export function ProfileForm({ user }: { user: Me }) {
     >
       <Field label="Nombre visible" autoComplete="nickname" maxLength={30} error={errors.displayName?.message} {...displayNameField} />
       <Field
-        label="Username"
+        label="Nombre de usuario"
         autoComplete="username"
         autoCapitalize="none"
         spellCheck={false}
         maxLength={20}
         disabled={live}
-        hint={live ? 'Finaliza el stream para cambiar tu username.' : `Tu canal: strim/${username || profile.username}`}
+        hint={live ? 'Finaliza el stream para cambiar tu nombre de usuario.' : `Tu canal: strim/${username || profile.username}`}
         error={errors.username?.message}
         {...usernameField}
         onChange={(event) => {

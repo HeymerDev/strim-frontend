@@ -543,7 +543,7 @@ Escritorio
 │ │ (AV 120)  (Cambiar foto)                        │ │
 │ │           JPG, PNG o WebP de hasta 2 MB.        │ │
 │ │ Nombre visible  [Ana Torres            ]        │ │
-│ │ Username        [ana                   ]        │ │
+│ │ Nombre de usuario [ana                 ]        │ │
 │ │                 Tu canal: strim/ana             │ │
 │ │ Bio             [Streams de desarrollo…]        │ │
 │ │                                     54 / 200    │ │
@@ -585,7 +585,7 @@ Escritorio
 
 - Columna de 400 px centrada en la pantalla, sobre `noche`, con el formulario en un `panel` de radio 20 px.
 - Las "pestañas" son dos enlaces (`/login` y `/register`) con `aria-current="page"` en el activo. Solo aparecen en esas dos páginas.
-- **Crear cuenta:** correo, username (ayuda "Será tu canal: strim/<username>") y contraseña con reglas. Botón "Crear cuenta".
+- **Crear cuenta:** correo, nombre de usuario (ayuda "Será tu canal: strim/<nombre de usuario>") y contraseña con reglas. Botón "Crear cuenta".
 - **Verificar:** título "Revisa tu correo", texto "Enviamos un código de 8 dígitos a **ana@correo.com**." (el número sale de `VITE_OTP_LENGTH`), `OtpInput`, "Reenviar código" (con "Reenviar en 0:42" mientras espera) y el enlace "Usar otro correo", que vuelve a `/register`.
 - **Recuperar:** paso 1 "Recupera tu contraseña" con el correo y "Enviar código". Paso 2 con el aviso del envío, `OtpInput`, "Contraseña nueva" y "Cambiar contraseña". El paso vive en el estado de la página.
 - `autocomplete`: `email`, `username`, `current-password` y `new-password` donde corresponde, para que funcionen los gestores de contraseñas.

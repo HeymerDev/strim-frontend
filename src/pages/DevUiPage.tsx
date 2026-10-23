@@ -67,9 +67,9 @@ export default function DevUiPage() {
       <Section title="Campos">
         <div className="grid gap-6 sm:grid-cols-2">
           <Field label="Correo" type="email" autoComplete="email" placeholder="ana@correo.com" />
-          <Field label="Username" hint="Será tu canal: strim/ana" defaultValue="ana" />
+          <Field label="Nombre de usuario" hint="Será tu canal: strim/ana" defaultValue="ana" />
           <Field label="Correo" type="email" defaultValue="ana@correo.com" error="Ese correo ya está registrado." />
-          <Field label="Username" defaultValue="ana" disabled hint="Finaliza el stream para cambiar tu username." />
+          <Field label="Nombre de usuario" defaultValue="ana" disabled hint="Finaliza el stream para cambiar tu nombre de usuario." />
           <PasswordField
             label="Contraseña"
             autoComplete="current-password"

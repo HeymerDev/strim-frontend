@@ -189,7 +189,7 @@
 
 ## Fase 6 · Cierre
 
-- [ ] **16. Revisión de diseño y accesibilidad**
+- [x] **16. Revisión de diseño y accesibilidad** · detector sin hallazgos; axe WCAG 2.1 AA sin violaciones en 8 pantallas × 2 anchos; revisión final de impeccable: fix → ship; DESIGN.md y design.json escritos. El recorrido completo solo con teclado queda para la tarea 17
   - Revisión con impeccable: detector, capturas a 1440 y 390 px, revisión final contra el contrato de dirección, y las correcciones que salgan.
   - `DESIGN.md` y `.impeccable/design.json` generados a partir de lo construido.
   - Pasada de accesibilidad: teclado de punta a punta, lector de pantalla en el chat y los formularios, contraste y "reducir movimiento".

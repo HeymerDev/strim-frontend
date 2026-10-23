@@ -23,6 +23,6 @@ STORY: El espectador entiende al instante quién está en vivo y entra a ver y l
 
 FIRST VIEWPORT: Canal: barra de 56 px; video 16:9 a la izquierda (fluido) y chat de 360 px a la derecha a todo el alto; debajo del video, avatar, nombre, título en Bricolage y la insignia En vivo. Estudio: panel de estado a la izquierda con el nodo de 72 px, el estado en 39 px y la acción principal; a la derecha, Conectar OBS y la guía.
 
-FORM: Producto de streaming estándar (video + chat lateral, barra superior) con un movimiento propio: el nodo de estado. Dirección fijada por el usuario, sin ronda de conceptos. seed: none (unavailable)
+FORM: Producto de streaming estándar (video + chat lateral, barra superior) con un movimiento propio: el nodo de estado. Dirección fijada por el usuario (el estilo del proyecto de Stitch y el logo), así que no hubo sorteo de conceptos ni semilla: seed: none (dirección fijada por el usuario, sin sorteo)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

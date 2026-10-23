@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T03:45:17.664Z",
+  "title": "Design System: strim",
+  "extensions": {
+    "colorMeta": {
+      "noche": {
+        "role": "neutral",
+        "displayName": "Noche índigo",
+        "canonical": "oklch(18.4% 0.030 289.2)",
+        "tonalRamp": [
+          "#0b0917",
+          "#242333",
+          "#414051",
+          "#605f72",
+          "#818094",
+          "#a4a2b7",
+          "#c8c6dc",
+          "#edecff"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "oklch(22.5% 0.046 285.9)",
+        "tonalRamp": [
+          "#0a071d",
+          "#23213a",
+          "#403e5a",
+          "#5f5e7b",
+          "#7f7f9d",
+          "#a2a1c1",
+          "#c6c5e6",
+          "#ebebff"
+        ]
+      },
+      "relieve": {
+        "role": "neutral",
+        "displayName": "Relieve",
+        "canonical": "oklch(26.7% 0.055 286.6)",
+        "tonalRamp": [
+          "#0b0621",
+          "#23203e",
+          "#403d5e",
+          "#5f5d7f",
+          "#7f7ea2",
+          "#a2a0c7",
+          "#c6c4ec",
+          "#ebeaff"
+        ]
+      },
+      "linea": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "oklch(32.0% 0.065 287.1)",
+        "tonalRamp": [
+          "#0b0424",
+          "#241f42",
+          "#403c63",
+          "#5f5c84",
+          "#7f7da8",
+          "#a29fcc",
+          "#c6c3f2",
+          "#ebe9ff"
+        ]
+      },
+      "pantalla": {
+        "role": "neutral",
+        "displayName": "Pantalla",
+        "canonical": "oklch(15.3% 0.025 286.8)",
+        "tonalRamp": [
+          "#0a0915",
+          "#242331",
+          "#41404f",
+          "#605f6f",
+          "#818091",
+          "#a3a3b5",
+          "#c7c7d9",
+          "#edecff"
+        ]
+      },
+      "texto": {
+        "role": "neutral",
+        "displayName": "Texto",
+        "canonical": "oklch(95.1% 0.016 293.7)",
+        "tonalRamp": [
+          "#0b0a11",
+          "#25242c",
+          "#42404a",
+          "#61606a",
+          "#82818b",
+          "#a5a3ae",
+          "#c9c7d3",
+          "#efedf9"
+        ]
+      },
+      "texto-suave": {
+        "role": "neutral",
+        "displayName": "Texto suave",
+        "canonical": "oklch(73.2% 0.046 289.5)",
+        "tonalRamp": [
+          "#0b071d",
+          "#25213a",
+          "#413e59",
+          "#605d7a",
+          "#817e9d",
+          "#a4a1c1",
+          "#c8c5e6",
+          "#edeaff"
+        ]
+      },
+      "texto-tenue": {
+        "role": "neutral",
+        "displayName": "Texto tenue",
+        "canonical": "oklch(65.3% 0.058 288.2)",
+        "tonalRamp": [
+          "#0b0521",
+          "#24203f",
+          "#413d5f",
+          "#5f5c80",
+          "#807da3",
+          "#a3a0c8",
+          "#c7c4ed",
+          "#ece9ff"
+        ]
+      },
+      "senal": {
+        "role": "primary",
+        "displayName": "Cian señal",
+        "canonical": "oklch(75.6% 0.131 214.7)",
+        "tonalRamp": [
+          "#00102c",
+          "#00304b",
+          "#00506c",
+          "#00728f",
+          "#0095b3",
+          "#00b9d8",
+          "#45defe",
+          "#74ffff"
+        ]
+      },
+      "senal-fuerte": {
+        "role": "primary",
+        "displayName": "Cian vivo (hover)",
+        "canonical": "oklch(81.3% 0.119 211.6)",
+        "tonalRamp": [
+          "#001127",
+          "#003046",
+          "#005066",
+          "#007188",
+          "#0094ab",
+          "#24b8d0",
+          "#58def6",
+          "#82ffff"
+        ]
+      },
+      "al-aire": {
+        "role": "secondary",
+        "displayName": "Índigo al aire",
+        "canonical": "oklch(40.5% 0.257 269.6)",
+        "tonalRamp": [
+          "#080049",
+          "#11007c",
+          "#1f1fb3",
+          "#323fed",
+          "#4c69ff",
+          "#7196ff",
+          "#9ac0ff",
+          "#c6e9ff"
+        ]
+      },
+      "teal": {
+        "role": "tertiary",
+        "displayName": "Teal de marca",
+        "canonical": "oklch(62.6% 0.111 216.3)",
+        "tonalRamp": [
+          "#001028",
+          "#002f47",
+          "#004e67",
+          "#006f89",
+          "#0092ad",
+          "#3cb6d2",
+          "#67dbf8",
+          "#8fffff"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Error",
+        "canonical": "oklch(73.8% 0.162 14.5)",
+        "tonalRamp": [
+          "#330000",
+          "#5c0009",
+          "#820026",
+          "#a92a44",
+          "#d15063",
+          "#f97585",
+          "#ff99a8",
+          "#ffc3cf"
+        ]
+      },
+      "peligro": {
+        "role": "error",
+        "displayName": "Peligro",
+        "canonical": "oklch(57.0% 0.193 23.7)",
+        "tonalRamp": [
+          "#340000",
+          "#630000",
+          "#8d0000",
+          "#b50e24",
+          "#de4246",
+          "#ff6968",
+          "#ff938e",
+          "#ffc5be"
+        ]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "nombre-1": {
+        "role": "tertiary",
+        "displayName": "Tono de nombre 1",
+        "canonical": "oklch(81.3% 0.119 211.6)",
+        "tonalRamp": [
+          "#001127",
+          "#003046",
+          "#005066",
+          "#007188",
+          "#0094ab",
+          "#24b8d0",
+          "#58def6",
+          "#82ffff"
+        ]
+      },
+      "nombre-2": {
+        "role": "tertiary",
+        "displayName": "Tono de nombre 2",
+        "canonical": "oklch(76.2% 0.126 284.5)",
+        "tonalRamp": [
+          "#0f003c",
+          "#23115e",
+          "#3d3381",
+          "#5b54a5",
+          "#7b76cb",
+          "#9c99f1",
+          "#c0bdff",
+          "#e5e3ff"
+        ]
+      },
+      "nombre-3": {
+        "role": "tertiary",
+        "displayName": "Tono de nombre 3",
+        "canonical": "oklch(83.9% 0.117 171.8)",
+        "tonalRamp": [
+          "#001705",
+          "#00351e",
+          "#00543a",
+          "#007659",
+          "#04987a",
+          "#44bd9c",
+          "#6ee2c0",
+          "#95ffe5"
+        ]
+      },
+      "nombre-4": {
+        "role": "tertiary",
+        "displayName": "Tono de nombre 4",
+        "canonical": "oklch(80.7% 0.122 357.6)",
+        "tonalRamp": [
+          "#2a000b",
+          "#4d0025",
+          "#711d42",
+          "#953f61",
+          "#bb6182",
+          "#e283a5",
+          "#ffa7c9",
+          "#ffccef"
+        ]
+      },
+      "nombre-5": {
+        "role": "tertiary",
+        "displayName": "Tono de nombre 5",
+        "canonical": "oklch(85.6% 0.126 76.0)",
+        "tonalRamp": [
+          "#250000",
+          "#451400",
+          "#663400",
+          "#895400",
+          "#ad7606",
+          "#d2993d",
+          "#f8bd64",
+          "#ffe38a"
+        ]
+      },
+      "logo-cian": {
+        "role": "tertiary",
+        "displayName": "Logo cian",
+        "canonical": "oklch(75.0% 0.131 214.8)",
+        "tonalRamp": [
+          "#00102c",
+          "#00304b",
+          "#00506c",
+          "#00728f",
+          "#0095b3",
+          "#00b9d8",
+          "#46defe",
+          "#74ffff"
+        ]
+      },
+      "logo-indigo": {
+        "role": "tertiary",
+        "displayName": "Logo índigo",
+        "canonical": "oklch(35.4% 0.235 268.5)",
+        "tonalRamp": [
+          "#070049",
+          "#0e007c",
+          "#1b20b3",
+          "#2f47e3",
+          "#4a6eff",
+          "#6d97ff",
+          "#97c1ff",
+          "#c4eaff"
+        ]
+      },
+      "logo-onda": {
+        "role": "tertiary",
+        "displayName": "Logo onda",
+        "canonical": "oklch(44.3% 0.196 262.5)",
+        "tonalRamp": [
+          "#030049",
+          "#00017c",
+          "#002fa7",
+          "#1c55ce",
+          "#3d7af6",
+          "#5f9fff",
+          "#87c6ff",
+          "#b8eeff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "El estado del panel del estudio; 31 px en móvil."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "El h1 de cada página y el título de los estados vacíos."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de panel y modal, nombre del canal; el título del stream sube a 25 px en escritorio."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido, campos y descripciones."
+      },
+      "chat": {
+        "displayName": "Chat",
+        "purpose": "Mensajes del chat."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas de campo, botones pequeños y avisos."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Insignias (700) y contadores u horas (400, cifras tabulares)."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Solo el servidor y la clave de OBS."
+      }
+    },
+    "shadows": [
+      {
+        "name": "aviso",
+        "value": "0 12px 32px -8px rgb(5 4 12 / 0.7)",
+        "purpose": "Avisos (toasts)."
+      },
+      {
+        "name": "menu",
+        "value": "0 16px 40px -12px rgb(5 4 12 / 0.8)",
+        "purpose": "Menú desplegable de usuario."
+      },
+      {
+        "name": "flotante",
+        "value": "0 8px 20px -6px rgb(5 4 12 / 0.8)",
+        "purpose": "Botón Mensajes nuevos sobre el chat."
+      },
+      {
+        "name": "velo-modal",
+        "value": "rgb(10 9 20 / 0.72)",
+        "purpose": "Fondo del ::backdrop del modal; el modal no lleva sombra."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-salida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva de entrada de modal, avisos, Mensajes nuevos y anillos del nodo."
+      },
+      {
+        "name": "estado-hover",
+        "value": "150ms",
+        "purpose": "Fondo, borde, color y filtro de botones, campos y tarjetas."
+      },
+      {
+        "name": "senal-entrante",
+        "value": "2.4s var(--ease-salida) infinite; retrasos -0.8s y -1.6s",
+        "purpose": "Tres anillos que se cierran hacia el centro: esperando señal. Única animación en bucle."
+      },
+      {
+        "name": "modal",
+        "value": "entra 160ms ease-salida (opacidad y escala desde 0.98); sale 120ms ease-in",
+        "purpose": "Dialog nativo y su velo."
+      },
+      {
+        "name": "aviso-entra",
+        "value": "200ms avisos / 160ms Mensajes nuevos; sube 8px",
+        "purpose": "Elementos que aparecen abajo."
+      },
+      {
+        "name": "fundido",
+        "value": "200ms ease-out",
+        "purpose": "Cambio de estado del marco de video; el panel de estado cambia de color en 200 ms."
+      },
+      {
+        "name": "reducir-movimiento",
+        "value": "0.01ms",
+        "purpose": "Con prefers-reduced-motion se anulan animaciones y transiciones; los anillos quedan quietos y concéntricos."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "La acción principal de cada vista: Iniciar stream, Crear cuenta, Transmite tú.",
+      "html": "<button class=\"ds-btn-primary\">Iniciar stream</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer;border:0;transition:background-color 150ms,border-color 150ms,filter 150ms;background:var(--color-senal,#12c4e3);color:var(--color-noche,#12101f);} .ds-btn-primary:hover{background:var(--color-senal-fuerte,#4fd6ee);} .ds-btn-primary:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;} .ds-btn-primary:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acciones de apoyo: Copiar, Guardar título, Finalizar stream, Transmitir.",
+      "html": "<button class=\"ds-btn-secondary\">Guardar título</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer;border:0;transition:background-color 150ms,border-color 150ms,filter 150ms;background:var(--color-relieve,#24213f);color:var(--color-texto,#efedf9);border:1px solid var(--color-linea,#312d52);} .ds-btn-secondary:hover{border-color:var(--color-texto-tenue,#8e8bb2);} .ds-btn-secondary:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;} .ds-btn-secondary:disabled{opacity:.5;cursor:not-allowed;}"
+    },
+    {
+      "name": "Botón fantasma",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Cancelar en modales, Mostrar en campos secretos, Iniciar sesión en la barra.",
+      "html": "<button class=\"ds-btn-ghost\">Seguir en vivo</button>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer;border:0;transition:background-color 150ms,border-color 150ms,filter 150ms;background:transparent;color:var(--color-texto,#efedf9);} .ds-btn-ghost:hover{background:var(--color-relieve,#24213f);} .ds-btn-ghost:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;}"
+    },
+    {
+      "name": "Botón destructivo",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Solo la confirmación de una acción destructiva dentro de un modal.",
+      "html": "<button class=\"ds-btn-danger\">Finalizar stream</button>",
+      "css": ".ds-btn-danger{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:9999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;font-weight:600;white-space:nowrap;cursor:pointer;border:0;transition:background-color 150ms,border-color 150ms,filter 150ms;background:var(--color-peligro,#d1343b);color:#fff;} .ds-btn-danger:hover{filter:brightness(1.1);} .ds-btn-danger:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;}"
+    },
+    {
+      "name": "Barra superior y botón de estudio",
+      "kind": "nav",
+      "refersTo": "button-al-aire",
+      "description": "Transmitir (secundario, nodo hueco) o En vivo (al-aire, nodo lleno) según el estado del canal; solo ícono en móvil.",
+      "html": "<div class=\"ds-bar\"><a class=\"ds-bar-btn ds-bar-off\" href=\"#\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 40 40\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"20\" cy=\"20\" r=\"15\" stroke=\"#a7a4c4\" stroke-width=\"5\"/></svg><span>Transmitir</span></a><a class=\"ds-bar-btn ds-bar-live\" href=\"#\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 40 40\" fill=\"none\" aria-hidden=\"true\"><g stroke=\"#12c4e3\" stroke-width=\"5\"><circle cx=\"20\" cy=\"20\" r=\"9\" fill=\"#12c4e3\" stroke=\"none\"/><circle cx=\"20\" cy=\"20\" r=\"17.5\"/></g></svg><span>En vivo</span></a></div>",
+      "css": ".ds-bar{display:flex;gap:12px;align-items:center;justify-content:flex-end;height:56px;padding:0 24px;background:var(--color-noche,#12101f);border-bottom:1px solid var(--color-linea,#312d52);} .ds-bar-btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:9999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:background-color 150ms,border-color 150ms,filter 150ms;} .ds-bar-off{background:var(--color-relieve,#24213f);color:var(--color-texto,#efedf9);border:1px solid var(--color-linea,#312d52);} .ds-bar-off:hover{border-color:var(--color-texto-tenue,#8e8bb2);} .ds-bar-live{background:var(--color-al-aire,#2410d0);color:#fff;} .ds-bar-live:hover{filter:brightness(1.25);} .ds-bar-btn:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Etiqueta visible arriba, control de 44 px, ayuda o contador debajo.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Título del stream</span><input class=\"ds-input\" placeholder=\"¿Qué vas a transmitir?\"><span class=\"ds-field-hint\">41 / 100</span></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:6px;font-family:'Figtree Variable',system-ui,sans-serif;} .ds-field-label{font-size:14px;font-weight:600;color:var(--color-texto,#efedf9);} .ds-input{height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--color-linea,#312d52);background:var(--color-relieve,#24213f);color:var(--color-texto,#efedf9);font:inherit;font-size:16px;transition:border-color 150ms;} .ds-input::placeholder{color:var(--color-texto-tenue,#8e8bb2);} .ds-input:hover{border-color:var(--color-texto-tenue,#8e8bb2);} .ds-input:focus{border-color:var(--color-senal,#12c4e3);outline:2px solid rgb(18 196 227 / .5);outline-offset:1px;} .ds-field-hint{align-self:flex-end;font-size:12px;color:var(--color-texto-tenue,#8e8bb2);font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Insignias En vivo y Streamer",
+      "kind": "chip",
+      "refersTo": "live-badge",
+      "description": "Cápsula al-aire con el nodo en vivo de 12 px (tarjetas, canal); la insignia Streamer del chat usa el mismo índigo a 20 px.",
+      "html": "<span class=\"ds-live\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 40 40\" fill=\"none\" aria-hidden=\"true\"><g stroke=\"#12c4e3\" stroke-width=\"5\"><circle cx=\"20\" cy=\"20\" r=\"9\" fill=\"#12c4e3\" stroke=\"none\"/><circle cx=\"20\" cy=\"20\" r=\"17.5\"/></g></svg>En vivo</span> <span class=\"ds-streamer\">Streamer</span>",
+      "css": ".ds-live{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 6px;border-radius:9999px;background:var(--color-al-aire,#2410d0);color:#fff;font-family:'Figtree Variable',system-ui,sans-serif;font-size:12px;font-weight:700;} .ds-streamer{display:inline-flex;align-items:center;height:20px;margin-right:6px;padding:0 8px;border-radius:9999px;background:var(--color-al-aire,#2410d0);color:#fff;font-family:'Figtree Variable',system-ui,sans-serif;font-size:12px;font-weight:700;vertical-align:middle;}"
+    },
+    {
+      "name": "Tarjeta de canal",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Sin miniatura de video: marco 16:9 teñido con el tono del username, avatar de 96 px con anillo senal e insignias abajo; borde senal en hover y foco.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-frame\"><span class=\"ds-avatar\">AT</span><span class=\"ds-card-badges\"><span class=\"ds-live\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 40 40\" fill=\"none\" aria-hidden=\"true\"><g stroke=\"#12c4e3\" stroke-width=\"5\"><circle cx=\"20\" cy=\"20\" r=\"9\" fill=\"#12c4e3\" stroke=\"none\"/><circle cx=\"20\" cy=\"20\" r=\"17.5\"/></g></svg>En vivo</span></span></div><div class=\"ds-card-meta\"><strong>Ana Torres</strong><span>Probando el nuevo setup de OBS</span></div></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:12px;width:300px;text-decoration:none;border-radius:20px;font-family:'Figtree Variable',system-ui,sans-serif;} .ds-card-frame{position:relative;display:grid;place-items:center;aspect-ratio:16/9;border-radius:20px;border:1px solid var(--color-linea,#312d52);background:color-mix(in oklab,var(--color-nombre-4,#ff9ec0) 8%,var(--color-panel,#1a1830));transition:border-color 150ms;} .ds-card:hover .ds-card-frame,.ds-card:focus-visible .ds-card-frame{border-color:var(--color-senal,#12c4e3);} .ds-card:focus-visible{outline:2px solid var(--color-senal,#12c4e3);outline-offset:4px;} .ds-avatar{display:inline-flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:9999px;background:color-mix(in oklab,var(--color-nombre-4,#ff9ec0) 22%,var(--color-relieve,#24213f));color:var(--color-nombre-4,#ff9ec0);font-weight:600;font-size:36px;outline:2px solid var(--color-senal,#12c4e3);outline-offset:2px;} .ds-card-badges{position:absolute;left:12px;bottom:12px;} .ds-live{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 6px;border-radius:9999px;background:var(--color-al-aire,#2410d0);color:#fff;font-family:'Figtree Variable',system-ui,sans-serif;font-size:12px;font-weight:700;} .ds-card-meta{display:flex;flex-direction:column;gap:4px;padding:0 4px;} .ds-card-meta strong{color:var(--color-texto,#efedf9);font-weight:700;} .ds-card-meta span{color:var(--color-texto-suave,#a7a4c4);font-size:14px;}"
+    },
+    {
+      "name": "Panel de estado del estudio",
+      "kind": "custom",
+      "refersTo": "panel-al-aire",
+      "description": "El momento propio: nodo de 72 px y estado en Display; en vivo, todo el panel pasa a al-aire con texto blanco.",
+      "html": "<section class=\"ds-status\"><svg width=\"72\" height=\"72\" viewBox=\"0 0 40 40\" fill=\"none\" aria-hidden=\"true\"><g stroke=\"#12c4e3\" stroke-width=\"1.6\"><circle cx=\"20\" cy=\"20\" r=\"8\" fill=\"#12c4e3\" stroke=\"none\"/><circle cx=\"20\" cy=\"20\" r=\"13\"/><circle cx=\"20\" cy=\"20\" r=\"19.2\"/></g></svg><div><h2 class=\"ds-status-title\">En vivo <span>1:02:34</span></h2><p class=\"ds-status-text\">Tu stream se está viendo en strim.</p></div></section>",
+      "css": ".ds-status{display:flex;align-items:flex-start;gap:20px;padding:24px;border-radius:20px;border:1px solid var(--color-al-aire,#2410d0);background:var(--color-al-aire,#2410d0);color:#fff;transition:background-color 200ms,border-color 200ms;} .ds-status-title{margin:0;font-family:'Bricolage Grotesque Variable','Figtree Variable',system-ui,sans-serif;font-size:39px;line-height:44px;font-weight:800;letter-spacing:-0.02em;} .ds-status-title span{margin-left:12px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:25px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:0;} .ds-status-text{margin:6px 0 0;font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;color:rgb(255 255 255 / .8);}"
+    },
+    {
+      "name": "Mensaje de chat",
+      "kind": "custom",
+      "refersTo": "chat-streamer-badge",
+      "description": "Nombre en bold en su tono y texto en la misma línea a 15 px; la insignia Streamer va antes del nombre del dueño.",
+      "html": "<ul class=\"ds-chat\"><li><b style=\"color:#6fe3c1\">Leo</b><i>: </i>hola a todos</li><li><span class=\"ds-streamer\">Streamer</span><b style=\"color:#ff9ec0\">Ana Torres</b><i>: </i>gracias por pasar!</li></ul>",
+      "css": ".ds-chat{list-style:none;margin:0;padding:8px 0;width:360px;background:var(--color-panel,#1a1830);font-family:'Figtree Variable',system-ui,sans-serif;font-size:15px;line-height:22px;color:var(--color-texto,#efedf9);} .ds-chat li{padding:4px 16px;transition:background-color 150ms;} .ds-chat li:hover{background:rgb(36 33 63 / .5);} .ds-chat b{font-weight:700;} .ds-chat i{font-style:normal;color:var(--color-texto-suave,#a7a4c4);} .ds-streamer{display:inline-flex;align-items:center;height:20px;margin-right:6px;padding:0 8px;border-radius:9999px;background:var(--color-al-aire,#2410d0);color:#fff;font-family:'Figtree Variable',system-ui,sans-serif;font-size:12px;font-weight:700;vertical-align:middle;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El nodo en la noche",
+    "overview": "strim vive en una noche índigo plana: fondo `noche`, paneles un tono más claros, bordes de 1 px en `linea`. Sobre esa base hay solo dos colores con significado. El cian `senal` es la acción, el foco y los anillos; el índigo `al-aire` significa una sola cosa: \"en vivo\". El estado del canal no se comunica con brillos ni pulsos de neón sino con la forma del cuarto nodo del logo (anillo hueco, anillos que se cierran hacia el centro, nodo lleno con anillos) y, en el estudio, con un campo de color completo.\n\nLa densidad es la de un producto de streaming estándar: barra superior de 56 px, video 16:9 y chat lateral de 360 px, tarjetas en rejilla en el inicio. La personalidad la ponen la tipografía (Bricolage Grotesque en peso 800 con interletrado cerrado para los títulos, Figtree para todo lo demás), las formas redondas (círculos para avatares y estados, cápsulas para botones e insignias, paneles de 20 px) y el nodo de estado, que es el único movimiento en bucle de la app.\n\nRechazo confirmado por la dirección: el \"app oscura con brillo neón y vidrio\" del género. No hay vidrio, desenfoques de fondo, brillos ni degradados en la interfaz.",
+    "keyCharacteristics": [
+      "Solo modo oscuro (`color-scheme: dark`), profundidad por capas tonales, no por sombras.",
+      "Dos acentos con semántica fija: `senal` actúa, `al-aire` está en vivo.",
+      "El estado del canal siempre se dibuja con el nodo de anillos y siempre se dice también en texto.",
+      "Títulos en Bricolage 800 a −0,02em; texto en Figtree; todo en español.",
+      "Círculos, cápsulas y paneles de 20 px; bordes de 1 px en `linea`."
+    ],
+    "rules": [
+      {
+        "name": "The Una Sola Señal Rule",
+        "body": "`al-aire` nunca decora: si aparece, algo está en vivo. Una pantalla sin canales en vivo no tiene índigo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cian Actúa Rule",
+        "body": "`senal` marca lo accionable y el foco. Un elemento cian que no se puede pulsar ni enfocar solo es aceptable como anillo de estado o ícono de confirmación.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cifras Tabulares Rule",
+        "body": "Todo número que cambia (espectadores, tiempo en vivo, contadores de caracteres, horas del chat) usa `tabular-nums` para no hacer saltar el texto.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sin Mayúsculas Rule",
+        "body": "No hay texto en mayúsculas sostenidas ni interletrado abierto; las etiquetas son oraciones en caja normal.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sin Vidrio Rule",
+        "body": "Nada de `backdrop-filter`, brillos de color, sombras de neón ni degradados. La profundidad la dan el tono y el borde; la sombra solo despega lo que flota.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** dibujar el estado del canal con el nodo de anillos y decirlo además en texto.",
+      "**Do** reservar `al-aire` para lo que está en vivo: insignia, insignia \"Streamer\", botón de la barra y panel del estudio al aire.",
+      "**Do** usar `senal` con texto `noche` para la acción principal y como único color de foco.",
+      "**Do** separar capas con tono (`noche`, `panel`, `relieve`) y bordes de 1 px en `linea`.",
+      "**Do** mantener los marcos de video y de tarjeta en 16:9 en todos los estados para que la página no salte.",
+      "**Do** usar cápsulas para botones e insignias, 12 px para campos y 20 px para paneles.",
+      "**Do** respetar \"reducir movimiento\": el nodo queda quieto y concéntrico, y las transiciones se anulan."
+    ],
+    "donts": [
+      "**Don't** usar vidrio, desenfoques de fondo, brillos de neón ni degradados.",
+      "**Don't** poner `al-aire` como decoración o color de marca fuera de \"en vivo\".",
+      "**Don't** añadir otra animación en bucle: el nodo esperando señal es la única.",
+      "**Don't** usar sombras en superficies en reposo ni sombras duras desplazadas.",
+      "**Don't** escribir etiquetas en mayúsculas con interletrado abierto ni poner antetítulos sobre los títulos.",
+      "**Don't** usar `teal` ni los colores `logo-*` fuera del logo."
+    ]
+  }
+}

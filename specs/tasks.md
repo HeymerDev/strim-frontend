@@ -178,7 +178,7 @@
     - Sin avatar se ven las iniciales, en la barra, el chat y el canal.
   - _RF-13 · Diseño §5.4, §10.5_
 
-- [ ] **15. Cambiar la contraseña y borrar la cuenta**
+- [x] **15. Cambiar la contraseña y borrar la cuenta** · probado con respuestas simuladas; falta con tu cuenta (tú). La sesión ahora recuerda si la cerró el usuario: cerrar sesión o borrar la cuenta desde una página privada lleva a / y no a /login
   - Los modales "Cambiar contraseña" y "Borrar cuenta" (diseño §10.5).
   - **Verificación:**
     - Contraseña actual incorrecta: error en ese campo y el modal sigue abierto.

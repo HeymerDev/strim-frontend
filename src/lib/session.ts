@@ -5,13 +5,21 @@ import * as api from './api';
 import type { AuthSession, Me, Tokens } from './types';
 
 export type Session = Tokens & { user: Me };
-export type SessionState = { status: 'checking' | 'ready'; session: Session | null };
+export type SessionState = {
+  status: 'checking' | 'ready';
+  session: Session | null;
+  /**
+   * `true` si el usuario terminó la sesión a propósito (cerrar sesión o borrar la cuenta), aquí o en otra
+   * pestaña: las rutas privadas llevan a / y no a /login (RF-02.4 y RF-02.7).
+   */
+  endedByUser: boolean;
+};
 
 const STORAGE_KEY = 'strim.session';
 /** Se renueva este tiempo antes de que venza el access token (RF-02.3). */
 const REFRESH_MARGIN_MS = 60_000;
 
-let state: SessionState = { status: 'ready', session: readStorage() };
+let state: SessionState = { status: 'ready', session: readStorage(), endedByUser: false };
 const listeners = new Set<() => void>();
 const tokenListeners = new Set<(token: string | null) => void>();
 let refreshTimer: number | undefined;
@@ -81,7 +89,7 @@ export function useSession(): SessionState {
 
 /** Inicia la sesión con lo que devuelve login o verify-email. */
 export function startSession(auth: AuthSession) {
-  setState({ status: 'ready', session: auth });
+  setState({ status: 'ready', session: auth, endedByUser: false });
 }
 
 /** Actualiza el usuario guardado (ajustes, estado del canal). */
@@ -90,8 +98,9 @@ export function updateUser(update: (user: Me) => Me) {
   setState({ ...state, session: { ...state.session, user: update(state.session.user) } });
 }
 
-export function clearSession() {
-  setState({ status: 'ready', session: null });
+/** `byUser`: la terminó el usuario (cerrar sesión, borrar la cuenta). Si no, venció o se rechazó. */
+export function clearSession(byUser = false) {
+  setState({ status: 'ready', session: null, endedByUser: byUser });
 }
 
 /**
@@ -133,7 +142,7 @@ export async function logout() {
   } catch {
     // La sesión se borra igual.
   }
-  clearSession();
+  clearSession(true);
 }
 
 /** Al arrancar: si hay sesión guardada, la comprueba con GET /api/me (RF-02.2). */
@@ -142,7 +151,7 @@ export async function bootSession() {
   setState({ ...state, status: 'checking' }, false);
   try {
     const user = await api.getMe();
-    if (state.session) setState({ status: 'ready', session: { ...state.session, user } });
+    if (state.session) setState({ ...state, status: 'ready', session: { ...state.session, user } });
   } catch (error) {
     // Sin conexión se sigue con el usuario guardado. Con 401 la renovación ya falló y borró la sesión.
     if (error instanceof api.ApiError && error.code === 'UNAUTHORIZED') clearSession();
@@ -155,7 +164,9 @@ api.setAuthBridge({ getAccessToken: () => state.session?.accessToken ?? null, re
 
 window.addEventListener('storage', (event) => {
   if (event.key !== STORAGE_KEY && event.key !== null) return;
-  setState({ status: 'ready', session: readStorage() }, false);
+  const session = readStorage();
+  // Si otra pestaña cerró sesión, aquí cuenta como hecho por el usuario.
+  setState({ status: 'ready', session, endedByUser: !session && Boolean(state.session) }, false);
 });
 
 scheduleRefresh();

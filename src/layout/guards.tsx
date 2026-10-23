@@ -4,9 +4,9 @@ import { Spinner } from '../components/Spinner';
 import { loginPath, safeNext } from '../lib/navigation';
 import { useSession } from '../lib/session';
 
-/** Rutas privadas: sin sesión lleva a /login?next=<ruta> (RF-02.5). */
+/** Rutas privadas: sin sesión lleva a /login?next=<ruta> (RF-02.5), o a / si la cerró el usuario. */
 export function RequireAuth({ children }: { children: ReactNode }) {
-  const { status, session } = useSession();
+  const { status, session, endedByUser } = useSession();
   const location = useLocation();
 
   if (status === 'checking') {
@@ -16,7 +16,8 @@ export function RequireAuth({ children }: { children: ReactNode }) {
       </div>
     );
   }
-  if (!session) return <Navigate to={loginPath(location.pathname + location.search)} replace />;
+  // Cerrar sesión o borrar la cuenta lleva al inicio; una sesión vencida, a iniciar sesión otra vez.
+  if (!session) return <Navigate to={endedByUser ? '/' : loginPath(location.pathname + location.search)} replace />;
   return children;
 }
 

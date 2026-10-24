@@ -1,7 +1,7 @@
 # Strim · Frontend — Tareas
 
 > **SDD fase 3 de 3** (Requerimientos → Diseño → Tareas)
-> Estado: **aprobado (v1)**, en curso · Fecha: 2026-10-19
+> Estado: **completado**: todas las tareas verificadas · Fecha: 2026-10-23
 > Parte de [requirements.md](requirements.md) v1 (D1 a D5) y [design.md](design.md) v1 (D1 a D4), ambos aprobados.
 
 **Cómo se usa este documento**
@@ -15,11 +15,11 @@
 
 ## Fase 0 · Preparación
 
-- [ ] **0.1 [tú] Backend en marcha**
+- [x] **0.1 [tú] Backend en marcha**
   - En `backend/`: `npm run media:up` y `npm run dev`, con `FRONTEND_URL=http://localhost:5173` en su `.env`.
   - **Verificación:** `http://localhost:4000/api/health` responde `{ "ok": true }`.
 
-- [ ] **0.2 [tú] OBS instalado**
+- [x] **0.2 [tú] OBS instalado**
   - Lo necesitan las tareas 9 a 13 y la 17. Hasta la 12, el video también se puede probar con ffmpeg, como en el backend. Para cambiar el título antes de que exista el estudio (tarea 10), se usa `backend/requests.http`.
 
 ## Fase 1 · Base del proyecto
@@ -196,7 +196,7 @@
   - **Verificación:** la revisión termina con veredicto `ship`, existe `DESIGN.md`, y todo el recorrido de la tarea 17 se puede hacer solo con el teclado.
   - _RNF-04, RNF-05, RNF-07_
 
-- [ ] **17. README y prueba de punta a punta**
+- [x] **17. README y prueba de punta a punta** · README escrito; /dev/ui no entra en el build; recorrido solo con teclado probado (14 comprobaciones en 7 pantallas); recorrido de punta a punta con OBS y dos navegadores hecho por el usuario el 2026-10-23
   - `frontend/README.md` corto: requisitos, `.env`, `pnpm install`, `pnpm dev` y la relación con el backend.
   - Quitar `/dev/ui` o confirmar que no entra en `pnpm build`.
   - **Verificación** (de punta a punta, en escritorio y en el celular):

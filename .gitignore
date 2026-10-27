@@ -6,3 +6,6 @@ dist
 
 # Capturas de la revisión de diseño (se regeneran)
 .impeccable/review/
+
+# Cobertura de las pruebas
+coverage

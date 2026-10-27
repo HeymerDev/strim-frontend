@@ -19,6 +19,7 @@ La especificación con la que se construyó está en [`specs/`](specs/): [requer
 9. [Cómo transmitir con OBS](#9-cómo-transmitir-con-obs)
 10. [Prueba de punta a punta](#10-prueba-de-punta-a-punta)
 11. [Problemas comunes](#11-problemas-comunes)
+12. [Pruebas unitarias](#12-pruebas-unitarias)
 
 ---
 
@@ -89,6 +90,7 @@ La URL del video no se configura aquí: llega en `playbackUrl` desde el backend.
 | `pnpm preview` | Sirve `dist/` en el puerto 5173 para probar el build. |
 | `pnpm typecheck` | Revisa los tipos de TypeScript. |
 | `pnpm lint` | ESLint. |
+| `pnpm test:run` | Pruebas unitarias (Vitest). `pnpm test` las deja observando cambios y `pnpm test:coverage` mide la cobertura. |
 
 ## 7. Rutas
 
@@ -157,3 +159,15 @@ Todo el recorrido se puede hacer solo con el teclado: Tab para moverse, Enter pa
 | El campo del código tiene más o menos casillas que el código del correo | `VITE_OTP_LENGTH` no coincide con "Email OTP Length" de Supabase. Corrígelo y reinicia `pnpm dev`. |
 | El canal dice "Conectando…" un rato | El paso a en vivo tarda unos segundos (el backend revisa cada 3 s, más el retraso del HLS). Si no termina, revisa que MediaMTX esté corriendo. |
 | El video arranca en silencio | Los navegadores bloquean el sonido automático. Usa "Activar sonido": la app recuerda tu elección. |
+
+## 12. Pruebas unitarias
+
+Vitest 5 + React Testing Library, con jsdom y todo lo externo simulado (API, socket y hls.js). Las pruebas están en `test/unit/`, con el mismo árbol que `src/`.
+
+```bash
+pnpm test:run        # una vez
+pnpm test            # en modo observación
+pnpm test:coverage   # con cobertura (carpeta coverage/, ignorada en git)
+```
+
+Las escribe el agente `frontend-unit-tests` (`../.claude/agents/frontend-unit-tests.md`), que no toca `src/`.

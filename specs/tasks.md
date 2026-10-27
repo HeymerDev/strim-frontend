@@ -1,7 +1,7 @@
 # Strim · Frontend — Tareas
 
 > **SDD fase 3 de 3** (Requerimientos → Diseño → Tareas)
-> Estado: **completado**: todas las tareas verificadas · Fecha: 2026-10-23
+> Estado: **completado**: todas las tareas verificadas (la 18, de pruebas unitarias, agregada y cerrada el 2026-10-26)
 > Parte de [requirements.md](requirements.md) v1 (D1 a D5) y [design.md](design.md) v1 (D1 a D4), ambos aprobados.
 
 **Cómo se usa este documento**
@@ -209,6 +209,15 @@
     7. Finalizar el stream: el canal pasa a desconectado en los dos navegadores.
     8. Cambiar la contraseña, cerrar sesión y entrar con la nueva.
     9. Borrar la cuenta.
+
+## Fase 7 · Pruebas unitarias (agregada el 2026-10-26)
+
+- [x] **18. Pruebas unitarias con Vitest y React Testing Library** · 44 archivos y 355 pruebas, 5 corridas seguidas en verde; cobertura de sentencias 87 %
+  - Agente `frontend-unit-tests` en `.claude/agents/frontend-unit-tests.md`: escribe las pruebas sin tocar `src/`; el agente principal las corre.
+  - Infraestructura: `vitest.config.ts`, `tsconfig.test.json`, `test/setup.ts` (polyfills de jsdom) y `test/helpers/`.
+  - Pruebas en `test/unit/`, con el mismo árbol que `src/`.
+  - **Verificación:** `pnpm test:run` pasa entero; `pnpm typecheck` y `pnpm lint` siguen sin errores.
+  - _D5 (cambiada) · Diseño §2_
 
 ---
 

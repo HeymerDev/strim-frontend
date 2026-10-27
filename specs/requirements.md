@@ -321,3 +321,5 @@ Solo modo oscuro, con la identidad del logo y la sección 4 como referencia. Los
 | D3 | ¿Qué muestra cada tarjeta del inicio, si no hay miniaturas? | Avatar grande, nombre, título y espectadores, sin video. | Además, una vista previa del video en silencio al pasar el mouse (más peticiones al servidor de video). |
 | D4 | ¿El estudio tiene vista previa y chat? | Vista previa en silencio cuando está en vivo, y el chat se lee en el canal ("Ver mi canal"). | También el chat dentro del estudio, al lado de los controles. |
 | D5 | ¿Pruebas automatizadas? | No por ahora: TypeScript, ESLint y una lista de pruebas manuales en las tareas, como en el backend. | Vitest + Testing Library para la sesión y el chat. |
+
+> **Cambio del 2026-10-26:** el usuario pidió pruebas unitarias después de terminar el frontend. D5 pasa a la alternativa, ampliada: Vitest + React Testing Library para lib, componentes, chat, estudio, ajustes y páginas (tarea 18).

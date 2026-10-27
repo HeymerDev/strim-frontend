@@ -42,7 +42,7 @@
 | Video | hls.js 1, importado de forma dinámica | Solo se descarga en el canal y en el estudio (RNF-08). En Safari se usa el HLS nativo si hls.js no puede. |
 | Íconos | lucide-react | SVG, se importan uno por uno. |
 | Fuentes | `@fontsource-variable` (servidas por la app) | Sin peticiones a Google Fonts y con `font-display: swap` (RNF-08). |
-| Pruebas | Ninguna automatizada | D5 de los requerimientos: TypeScript, ESLint y pruebas manuales en las tareas. |
+| Pruebas | Vitest 5 + React Testing Library (desde la tarea 18) | Al principio no había pruebas automatizadas (D5). El 2026-10-26 se agregaron pruebas unitarias en `test/unit/`, escritas por el agente `frontend-unit-tests` (`.claude/agents/`), con jsdom y todo lo externo simulado. |
 
 ## 3. Estructura de carpetas
 
